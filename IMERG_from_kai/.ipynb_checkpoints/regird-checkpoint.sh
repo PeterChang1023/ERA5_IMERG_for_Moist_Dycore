@@ -1,0 +1,13 @@
+#!bin/sh
+
+cat > mygrid << EOF
+gridtype = lonlat
+xsize    = 576
+ysize    = 360
+xfirst   = 0.3125
+xinc     = 0.625
+yfirst   = -89.75
+yinc     = 0.5
+EOF
+
+cdo remapbil,mygrid temp.nc out2.nc
