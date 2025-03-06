@@ -1,19 +1,47 @@
 # ERA5_IMERG_for_Moist_Dycore
-## Checking the consistence of the theory in Moist Dycore and ERA5, IMERG (precipitation data)
 
-### Before you run it, make sure Grads has been installed, please.
-### Grads is executed by C# language, which is much faster than Python.
-   
-```
-1. sh run.sh \n
+## Overview
+This repository checks the consistency of theoretical predictions in **Moist Dycore** with observational data from **ERA5** and **IMERG** precipitation datasets.
+
+## Data Description
+- **Year Range:** 2001–2022
+- **U-Wind Data:** ERA5 daily data
+- **IMERG Data:** Originally 30-minute HDF5 files, transformed into daily files
+- **Transformation Script:** `Paper2/IMERG_from_kai/Save_HDF5_to_daily_nc.ipynb` converts IMERG files from 30-minute intervals to daily aggregates.
+
+## Prerequisites
+Before running the scripts, ensure **GrADS** is installed. GrADS is executed using C, making it significantly faster than Python for certain operations.
+
+
+## Running the Analysis
+Follow these steps to execute the scripts:
+
+
+### **Step 1: Run the Shell Script**
+Execute the following command in the terminal:
+```sh
+sh run.sh
 ```
 
+### **Step 2: Execute GrADS Script**
+After running the shell script, execute the GrADS script:
+```sh
+grads -bpc "run integrate.gs"
 ```
-2. integrate.gs \n
-```
-### the file is written by Grads.\n
-### There are 8 layers every year.
-### This gs file is to calculate the barotropic u wind.
-### ubaro = ... is a weighted average equation.
-   
-   
+
+### **About `integrate.gs`**
+- Written in **GrADS**
+- Processes **8 layers per year**
+- Calculates the **barotropic u-wind** using a weighted average equation:
+  ```
+  ubaro = ...
+  ```
+
+## Citation
+If you use this repository, please cite relevant sources for ERA5, IMERG, and Moist Dycore theory.
+
+## Contact
+For any issues or questions, feel free to open an issue or reach out via email.
+
+
+
