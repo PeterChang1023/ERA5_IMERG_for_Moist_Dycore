@@ -12,19 +12,23 @@ This repository checks the consistency of theoretical predictions in **Moist Dyc
 ## Prerequisites
 Before running the scripts, ensure **GrADS** is installed. GrADS is executed using C, making it significantly faster than Python for certain operations.
 
-
 ## Running the Analysis
 Follow these steps to execute the scripts:
 
-### **Step 0: Converts IMERG files from 30min intervals to daily data**
-`Paper2/IMERG_from_kai/Save_HDF5_to_daily_nc.ipynb`
+### **Step 0: Convert IMERG Files from 30-Minute Intervals to Daily Data**
+```ipython 
+ipython Paper2/IMERG_from_kai/Save_HDF5_to_daily_nc.ipynb
+```
 
-### **Step 0.5: Remove seasonal cycle**
-For precipitation: Paper2/IMERG_from_kai/anomaly.sh
-For u-wind       : Paper2/Reanalysis/u_kai/anomaly.sh
+### **Step 0.5: Remove Seasonal Cycle**
+- **For Precipitation:** `Paper2/IMERG_from_kai/anomaly.sh`
+- **For U-Wind:** `Paper2/Reanalysis/u_kai/anomaly.sh`
+
+Run the following command:
 ```sh
 sh anomaly.sh
 ```
+
 ### **Step 1: Run the Shell Script**
 Execute the following command in the terminal:
 ```sh
@@ -50,6 +54,4 @@ If you use this repository, please cite relevant sources for ERA5, IMERG, and Mo
 
 ## Contact
 For any issues or questions, feel free to open an issue or reach out via email.
-
-
 
