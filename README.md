@@ -16,7 +16,15 @@ Before running the scripts, ensure **GrADS** is installed. GrADS is executed usi
 ## Running the Analysis
 Follow these steps to execute the scripts:
 
+### **Step 0: Converts IMERG files from 30min intervals to daily data**
+`Paper2/IMERG_from_kai/Save_HDF5_to_daily_nc.ipynb`
 
+### **Step 0.5: Remove seasonal cycle**
+For precipitation: Paper2/IMERG_from_kai/anomaly.sh
+For u-wind       : Paper2/Reanalysis/u_kai/anomaly.sh
+```sh
+sh anomaly.sh
+```
 ### **Step 1: Run the Shell Script**
 Execute the following command in the terminal:
 ```sh
